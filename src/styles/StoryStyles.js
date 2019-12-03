@@ -1,5 +1,32 @@
 import styled from 'styled-components';
 
+export const StoryMeta = styled.div`
+  font-style: italic;
+
+  > span:not(first-child):before {
+    content: '•';
+    margin: 0 0.5rem;
+  }
+
+  .story__meta-bold {
+    font-weight: bold;
+  }
+`;
+
+export const StoryTitle = styled.h1`
+  font-size: 1rem;
+  line-height: 1.8;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  text-decoration: none;
+
+  a {
+    background-color: #f8dc3d;
+    color: #2e2e2c;
+    text-decoration: none;
+  }
+`;
+
 export const StoryWrapper = styled.section`
   border-top: 1px solid #ccc;
   margin-bottom: 0.75rem;

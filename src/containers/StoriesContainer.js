@@ -6,9 +6,7 @@ const StoriesContainer = () => {
   const [topStoryIds, setTopStoryIds] = useState([]);
 
   useEffect(() => {
-    console.log('useEffect here!');
     getTopStoryIds().then(data => setTopStoryIds(data));
-    getStory(21694891).then(data => console.log(data));
   }, []);
 
   // useEffect(() => console.log(`that happened with ${topStoryIds}`), [

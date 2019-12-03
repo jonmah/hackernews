@@ -13,6 +13,11 @@ export const StoryMeta = styled.div`
   }
 `;
 
+export const StoryMetaElement = styled.span`
+  color: ${props => props.color || 'red'}
+  font-weight: bold;
+`;
+
 export const StoryTitle = styled.h1`
   font-size: 1rem;
   line-height: 1.8;

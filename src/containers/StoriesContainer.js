@@ -13,7 +13,14 @@ const StoriesContainer = () => {
   //   topStoryIds
   // ]);
 
-  return topStoryIds.map(storyId => <Story key={storyId} storyId={storyId} />);
+  return (
+    <>
+      <h1>Hacker News Stories</h1>
+      {topStoryIds.map(storyId => (
+        <Story key={storyId} storyId={storyId} />
+      ))}
+    </>
+  );
 };
 
 export default StoriesContainer;

@@ -4,17 +4,19 @@ import { StoryWrapper } from '../styles/StoryStyles';
 
 const Story = ({ storyId }) => {
   const [story, setStory] = useState({});
-  const { by, title, url } = story;
+  const { by, time, title, url } = story;
 
   useEffect(() => {
     getStory(storyId).then(data => setStory(data));
-  }, []);
+  }, [storyId]);
 
   return (
-    <StoryWrapper>
-      <p>{title}</p>
-      <p>{by}</p>
-      <p>{url}</p>
+    <StoryWrapper data-test-id="story">
+      <a href={url}>
+        <p>{title}</p>
+      </a>
+      <p>By: {by}</p>
+      <p>Posted: {time}</p>
     </StoryWrapper>
   );
 };

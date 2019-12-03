@@ -9,14 +9,13 @@ const StoriesContainer = () => {
     console.log('useEffect here!');
     getTopStoryIds().then(data => setTopStoryIds(data));
     getStory(21694891).then(data => console.log(data));
-    // storyIds && storyIds.length > 0
   }, []);
 
   // useEffect(() => console.log(`that happened with ${topStoryIds}`), [
   //   topStoryIds
   // ]);
 
-  return topStoryIds.map(storyId => <Story storyId={storyId} />);
+  return topStoryIds.map(storyId => <Story key={storyId} storyId={storyId} />);
 };
 
 export default StoriesContainer;

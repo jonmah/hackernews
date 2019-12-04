@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { getTopStoryIds } from '../api/hacker-news';
+import { useInfiniteScroll } from '../hooks/useInfiniteScroll';
+
 import Story from '../components/Story';
 
 const StoriesContainer = () => {
+  const { count } = useInfiniteScroll();
   const [topStoryIds, setTopStoryIds] = useState([]);
 
   useEffect(() => {
@@ -16,7 +19,7 @@ const StoriesContainer = () => {
   return (
     <>
       <h1>Hacker News Stories</h1>
-      {topStoryIds.map(storyId => (
+      {topStoryIds.slice(0, count).map(storyId => (
         <Story key={storyId} storyId={storyId} />
       ))}
     </>

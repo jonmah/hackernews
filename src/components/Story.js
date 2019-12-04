@@ -21,12 +21,12 @@ const Story = ({ storyId }) => {
         <a href={url}>{title}</a>
       </StoryTitle>
       <StoryMeta>
-        <span className="story__by" data-test-id="story-by">
+        <span data-test-id="story-by">
           <StoryMetaElement>By:</StoryMetaElement> {by}
         </span>
       </StoryMeta>
       <StoryMeta>
-        <span className="story__time" data-test-id="story-time">
+        <span data-test-id="story-time">
           <StoryMetaElement>Posted:</StoryMetaElement> {time}
         </span>
       </StoryMeta>
